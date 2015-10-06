@@ -1,0 +1,38 @@
+<html ng-app="mqttTestApp">
+
+<head>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/ngstorage/0.3.6/ngStorage.min.js"></script>
+    <script type="text/javascript" src="/vendor/mqttws31.js"></script>
+    <script type="text/javascript" src="/app/app.js"></script>
+    <script type="text/javascript" src="/app/mqttService.js"></script>
+</head>
+
+<body ng-controller="AppController">
+    <div>
+        <label>Username/ClientId</label>
+        <input type="text" ng-model="username">
+    </div>
+    <div>
+        <label>Mqtt Host</label>
+        <input type="text" ng-model="host">
+    </div>
+    <div>
+        <label>Mqtt Port</label>
+        <input type="text" ng-model="port">
+    </div>
+    <div>
+        <label>Use SSL</label>
+        <input type="checkbox" ng-model="useSSL">
+    </div>
+    <button type="submit" ng-click="onConnect()">Connect!</button>
+    <p ng-if="isConnected">CONNECTED!</p>
+    <p ng-if="!isConnected">DISCONNECTED!</p>
+
+    <br><br>
+    <div ng-repeat="user in users">
+        <p>{{user.clientId}} is {{user.status}}</p>
+    </div>
+</body>
+
+</html>

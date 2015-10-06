@@ -1,0 +1,9 @@
+{
+  "name": "mqtt-tests",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "express": "~4.13.3",
+    "less-middleware": "1.0.x"
+  }
+}
